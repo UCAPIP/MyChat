@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
-import "./Contacts.css";
-import user from "../USER.png"
+import "../Contacts.css";
+import user from "../../images/USER.png";
 
 const FiltredContacts = (props) => {
     if(props.text === ''){

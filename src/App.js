@@ -1,19 +1,13 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import './App.css';
 import Chat from './chat/Chat';
-import EmptyPage from './chat/EmptyPage';
+import EmptyPage from './emptyPage/EmptyPage';
 import Contacts from './contacts/Contacts';
 import moment from 'moment';
-
-
-
+import store from './store';
+import { Provider } from 'react-redux';
 
 function App() {
-
-  // Нужно зарефакторить на 3 сущности: 1. Контакты 2. Сообщения 3. Чаты
-  // И связать их по общему chatID
-
-  // Принял решение, что достаточно двух массивов в которых будет указан соотвествующий друг другу чатИД
 
   const users = [
     {
@@ -80,6 +74,7 @@ function App() {
 
   return (
     <BrowserRouter>
+      <Provider store={store}>
       <Routes>
         <Route path='/' element={
           <div className='mainGrid'>
@@ -92,6 +87,7 @@ function App() {
             <Chat messages={messages} users={users}/>
           </div>}/>
       </Routes>
+      </Provider>
     </BrowserRouter>
   );
 }

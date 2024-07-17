@@ -1,9 +1,10 @@
 import "./Contacts.css";
-import user from "../USER.png"
+import user from "../images/USER.png";
 import { useState } from "react";
 import AddCommentIcon from '@mui/icons-material/AddComment';
 import DehazeIcon from '@mui/icons-material/Dehaze';
-import FiltredContacts from "./FiltredContacts";
+import FiltredContacts from "./filtredContacts/FiltredContacts";
+import Menu from "./dropdownMenu/Menu";
 
 
 const Contacts = (props) => {
@@ -15,24 +16,6 @@ const Contacts = (props) => {
     const [open, setOpen] = useState(false);
 
     const showMenu = () => !open ? setOpen(true) : setOpen(false);
-
-    const Menu = () => {
-        return(
-            <div className="dropMenu">
-                <ul className="list">
-                    <li>Новая группа</li>
-                    <li>Новое сообщество</li>
-                    <li>Сообщества</li>
-                    <li>Избранные сообщения</li>
-                    <li>Выбрать чаты</li>
-                    <li>Настройки</li>
-                    <li>Выйти</li>
-                    <br />
-                    <li>Установите MyChat для Windows</li>
-                </ul>
-            </div>
-        )
-    }
 
     return(
         <div className="allSection">
