@@ -1,0 +1,201 @@
+
+.allSection{
+    width: 400px;
+}
+
+header{
+    height: 5vh;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+header img{
+    border: 0;
+    border-radius: 25px;
+}
+
+input{
+    border: none;
+    border-radius: 5px;
+    -webkit-appearance: none; /* Для Chrome, Safari и Opera */
+    -moz-appearance: none; /* Для Firefox */
+    appearance: none; /* Современный стандарт */
+    outline: none; /* Убираем фокусировку */
+    box-shadow: none; /* Убираем тень */
+    background: #ccc;
+}
+
+input:focus{
+    outline: 2px solid rgb(56, 138, 56);
+    background: rgb(195, 195, 195);
+}
+
+.headerBtns{
+    display: flex;
+    justify-content: space-between;
+    /* gap: 20px; */
+    align-items: center;
+    /* margin-right: 15px; */
+}
+
+.headerBtn{
+    transition: all 0.3s ease;
+    text-align: center;
+    display: flex;
+    width: 45px;
+    height: 45px;
+    justify-content: center;
+    border-radius: 50%;
+    align-items: center;
+    cursor: pointer;
+    background-color: transparent;
+}
+
+.headerBtn:hover{
+    border-radius: 50%;
+    background-color: rgba(195, 195, 195, 0.5);
+}
+
+.headerBtn:active{
+    border-radius: 50%;
+    background-color: rgb(195, 195, 195);
+}
+
+.filters{
+    height: 10vh;
+}
+
+.search{
+    display: block;
+    width: 90%;
+    margin: 5px auto;
+    padding: 5px 10px;
+}
+
+.btnsBlock{
+    display: flex;
+    width: 90%;
+    margin: 5px auto;
+    justify-content: center;
+}
+
+.btnItem{
+    padding: 5px 10px;
+    margin: 5px;
+    -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+    border: 0;
+    border-radius: 25px;
+    background: rgb(204, 204, 204);
+    padding: 15px 20px;
+    font-weight: bold;
+}
+
+.btnItem:hover, .btnHead:hover{
+    background: rgb(195, 195, 195);
+}
+
+.contactsList{
+    margin: 5px 5px;
+    height: 80vh;
+    overflow-y: auto;
+    scroll-snap-type: y;
+    scrollbar-width: thin;
+    scrollbar-color: rgb(195, 195, 195) rgb(160, 170, 160);
+}
+
+.contactItem{
+    display: flex;
+    height: 50px;
+    gap: 5px;
+    margin: 5px;
+    background-color: grey;
+    border: 0;
+    border-radius: 5px;
+}
+
+.contactItem:hover{
+    background-color: rgb(195, 195, 195);
+}
+
+.contactItem img{
+    height: 100%;
+    width: 50px;
+    border: 0;
+    border-radius: 5px;
+}
+
+.contactItem p{
+    font-weight: bold;
+    width: 100%;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+  }
+
+@media screen and (max-width: 1920px) {
+    .dropMenu{
+        position: fixed; /* Закрепляет элемент относительно окна просмотра */
+        top: 60px; /* Позиционирует элемент по верхнему краю окна просмотра */
+        left: 440px; /* Позиционирует элемент по левому краю окна просмотра */
+        z-index: 9999; /* Устанавливает высокий z-index, чтобы элемент был поверх других */
+        width: 250px;
+        background-color: rgb(160, 170, 160); /* Пример цвета фона */
+        padding: 10px; /* Пример внутреннего отступа */
+        box-shadow: 0 2px 14px rgba(0,0,0,0.5); /* Пример тени вокруг элемента */
+        border-radius: 5px;
+    }
+}
+
+@media screen and (max-width: 1499px) {
+    .dropMenu{
+        position: fixed; /* Закрепляет элемент относительно окна просмотра */
+        top: 60px; /* Позиционирует элемент по верхнему краю окна просмотра */
+        left: 240px; /* Позиционирует элемент по левому краю окна просмотра */
+        z-index: 9999; /* Устанавливает высокий z-index, чтобы элемент был поверх других */
+        width: 250px;
+        background-color: rgb(160, 170, 160); /* Пример цвета фона */
+        padding: 10px; /* Пример внутреннего отступа */
+        box-shadow: 0 2px 14px rgba(0,0,0,0.5); /* Пример тени вокруг элемента */
+        border-radius: 5px;
+    }
+}
+
+@media screen and (max-width: 1100px) {
+    .dropMenu{
+        position: fixed; /* Закрепляет элемент относительно окна просмотра */
+        top: 60px; /* Позиционирует элемент по верхнему краю окна просмотра */
+        left: 40px; /* Позиционирует элемент по левому краю окна просмотра */
+        z-index: 9999; /* Устанавливает высокий z-index, чтобы элемент был поверх других */
+        width: 250px;
+        background-color: rgb(160, 170, 160); /* Пример цвета фона */
+        padding: 10px; /* Пример внутреннего отступа */
+        box-shadow: 0 2px 14px rgba(0,0,0,0.5); /* Пример тени вокруг элемента */
+        border-radius: 5px;
+    }
+}
+
+.list{
+    display: flex;
+    flex-flow: column;
+    border:#ccc;
+    text-align: start;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    gap: 5px;
+}
+
+.list li{
+    padding: 5px 15px;
+}
+
+.list li:hover{
+    cursor: pointer;
+    background-color: rgb(150, 160, 150);
+    border-radius: 5px;
+}

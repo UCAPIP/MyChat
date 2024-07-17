@@ -1,0 +1,45 @@
+
+.fullPage{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: rgb(160, 170, 160);
+    border: solid 1px rgb(140, 150, 140);
+}
+
+.flexContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 100px;
+    row-gap: 50px;
+    margin-bottom: 100px;
+}
+
+.flexContainer img{
+    width: 100px;
+}
+
+.article{
+    color: rgba(0, 0, 0, 0.5);
+}
+
+.flexContainer p, img, h2 {
+    margin: 0;
+}
+
+.btnLoad{
+    -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  border: 0;
+  border-radius: 25px;
+  background: #ccc;
+  padding: 15px 20px;
+  font-weight: bold;
+}
+
