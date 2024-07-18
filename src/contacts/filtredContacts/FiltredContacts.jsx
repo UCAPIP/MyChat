@@ -1,15 +1,19 @@
 import { Link } from "react-router-dom";
 import "../Contacts.css";
-import user from "../../images/USER.png";
+import user_img from "../../images/USER.png";
+import { useSelector } from "react-redux";
 
 const FiltredContacts = (props) => {
+
+    const users = useSelector((state) => state.users);
+
     if(props.text === ''){
         return(
             <div className="contactsList">
-            {props.users.map((value) => (
-                <Link to={`/${value.chatId}`}><div className="contactItem">
-                    <img src={user} alt="user" />
-                    <p>{value.name}</p></div>
+            {users.map((user) => (
+                <Link to={`/${user.chatId}`}><div className="contactItem">
+                    <img src={user_img} alt="user" />
+                    <p>{user.name}</p></div>
                 </Link>
             ))}
             </div>
@@ -17,13 +21,13 @@ const FiltredContacts = (props) => {
     }else{
         return(
             <div className="contactsList">
-            {props.users.map((value) => { 
-                let name = value.name.toLowerCase();
+            {users.map((user) => { 
+                let name = user.name.toLowerCase();
                 if(name.includes(props.text.toLowerCase())){
                     return(
-                        <Link to={`/${value.chatId}`}><div className="contactItem">
-                        <img src={user} alt="user" />
-                        <p>{value.name}</p></div>
+                        <Link to={`/${user.chatId}`}><div className="contactItem">
+                        <img src={user_img} alt="user" />
+                        <p>{user.name}</p></div>
                         </Link>
                     )  
                 }else{

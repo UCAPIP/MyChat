@@ -2,9 +2,15 @@ import { useState } from "react";
 import "../Chat.css";
 import { useLocation } from "react-router-dom";
 import moment from "moment";
+import { useDispatch, useSelector } from "react-redux";
+import { setNewMessage } from "../../redux/messageSlice";
 
 
-const MessageInput = (props) => {
+const MessageInput = () => {
+
+    const messages = useSelector((state) => state.messages);
+    
+    const dispatch = useDispatch();
 
     const [text, setText] = useState('')
 
@@ -31,25 +37,16 @@ const MessageInput = (props) => {
 
     const handleSend = (event) => {
 
-        const updatedMessages = props.messages.map((message, index) => {
-            if(message.chatId === chatUrl){
-                return {
-                    ...message,
-                    messagesText: [
-                        ...message.messagesText,
-                        {
-                            sender: "me",
-                            text: text,
-                            date: moment().format('MMMM Do YYYY, h:mm:ss a')
-                        }
-                    ]
-                };
-            }else{
-                return(message);
-            }   
-        })
+        const chatToUpdate = messages.find(message => message.chatId === chatUrl)?.chatId;
 
-        props.updateMessages(updatedMessages);
+        dispatch(setNewMessage({
+            chatId: chatToUpdate,
+            newMessage: {
+                sender: "me",
+                text: text,
+                date: moment().format('MMMM Do YYYY, h:mm:ss a')
+            }
+        }))
 
         event.preventDefault();
         setText('');

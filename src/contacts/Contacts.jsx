@@ -7,7 +7,7 @@ import FiltredContacts from "./filtredContacts/FiltredContacts";
 import Menu from "./dropdownMenu/Menu";
 
 
-const Contacts = (props) => {
+const Contacts = () => {
 
     const [text, setText] = useState('');
 
@@ -39,7 +39,7 @@ const Contacts = (props) => {
                     <button className="btnItem">Группы</button>
                 </div>
             </div>
-            <FiltredContacts users={props.users} text={text} />
+            <FiltredContacts text={text} />
         </div>
     )
 }

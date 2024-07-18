@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import "../Contacts.css";
 
 const Menu = () => {
@@ -12,6 +13,7 @@ const Menu = () => {
                 <li>Настройки</li>
                 <li>Выйти</li>
                 <br />
+                <Link to="/admin"><li>ADMIN</li></Link>
                 <li>Установите MyChat для Windows</li>
             </ul>
         </div>

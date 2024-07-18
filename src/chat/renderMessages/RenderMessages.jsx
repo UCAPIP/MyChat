@@ -4,21 +4,19 @@ import { useSelector } from 'react-redux';
 
 
 
-const RenderMessages = (props) => {
+const RenderMessages = () => {
 
-
-    const messages = useSelector((state) => state.user);
-    console.log(messages)
-    debugger;
+    const users = useSelector((state) => state.users);
+    const messages = useSelector((state) => state.messages);
 
     const location = useLocation();
     let chatUrl = Number(location.pathname.replace('/', ''));
-    for(let i = 0; i < props.messages.length; i++){
-        if(props.messages[i].chatId === chatUrl){
+    for(let i = 0; i < messages.length; i++){
+        if(messages[i].chatId === chatUrl){
             return(
                 <div className='messages'>
-                    <h2 className='chatName'>{props.users[i].name}</h2>
-                        {props.messages[i].messagesText.map((message, index) => {
+                    <h2 className='chatName'>{users[i].name}</h2>
+                        {messages[i].messagesText.map((message, index) => {
                             if(message.sender === "user"){
                                 return(
                                     <div key={index} className='messageUser'>
