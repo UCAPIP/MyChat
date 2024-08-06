@@ -15,7 +15,7 @@ const Header = () => {
             <div className="headerBtns">
                 <div className="headerBtn" onClick={showMenu}>
                     <DehazeIcon />
-                    {open ? <Menu /> : console.log('test')}
+                    {open ? <Menu /> : null}
                 </div>
                 <div className="headerBtn">
                     <AddCommentIcon />
