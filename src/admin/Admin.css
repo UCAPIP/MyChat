@@ -1,0 +1,44 @@
+.admin{
+    display: flex;
+    background-color: rgb(150, 160, 150);
+    color: rgb(0, 0, 0);
+    height: 100vh;
+    flex-direction: column;
+}
+
+.admin__header{
+    align-self:center;
+    margin-top: 15px;
+    padding-top: 15px;
+}
+
+.admin__form{
+    display: flex;
+    background-color: rgb(80, 95, 80);
+    color: rgb(255, 255, 255);
+    height: max-content;
+    width: 30vh;
+    gap: 15px;
+    padding: 15px;
+    margin: 15px;
+    flex-direction: column;
+    align-self: center;
+    align-items: start;
+    border-radius: 10px;
+}
+
+.admin__form-input{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.admin__form-input input{
+    padding: 5px;
+}
+
+.admin__form-btn{
+    padding: 10px;
+    align-self: center;
+}
