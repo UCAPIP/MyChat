@@ -1,5 +1,5 @@
 import { useState } from "react";
-import "../Chat.css";
+import "./MessageInput.css";
 import { useLocation } from "react-router-dom";
 import moment from "moment";
 import { useDispatch, useSelector } from "react-redux";
@@ -54,8 +54,10 @@ const MessageInput = () => {
     }
 
     return(
-        <form>
+        <>
+            <form className="inputForm">
                 <textarea 
+                    className="inputForm__input"
                     type="text" 
                     value={text} 
                     onChange={(e) => {handleChange(e); sizeChange(e);}}
@@ -63,11 +65,13 @@ const MessageInput = () => {
                     style={{height: height, overflow: scrollText}}
                     />
                 <input 
+                    className="inputForm__btn"
                     type="submit" 
                     value="Отправить"
                     onClick={handleSend} 
                     />
             </form>
+        </>
     )
 }
 

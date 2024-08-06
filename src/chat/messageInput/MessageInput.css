@@ -1,0 +1,27 @@
+.inputForm{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.inputForm__input{
+    resize: none;
+    background: #f6f6f6;
+	border: 1px solid #cecece;
+	border-radius: 5px;
+    padding: 10px 15px;
+    width: 100%;
+    font-weight: 600;
+    margin: 2vh 0;
+}
+
+.inputForm__input:focus{
+    outline: 2px solid rgb(56, 138, 56);
+}
+
+.inputForm__btn{
+    margin: 5px;
+    padding: 5px;
+    border-radius: 50px;
+}

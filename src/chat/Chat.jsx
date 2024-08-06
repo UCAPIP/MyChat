@@ -2,12 +2,10 @@ import "./Chat.css"
 import RenderMessages from './renderMessages/RenderMessages';
 import MessageInput from './messageInput/MessageInput';
 
-const Chat = (props) => {
+const Chat = () => {
     return(
         <div className='chatBody'>
-            <div className='messagesFiled'>
-            <RenderMessages users={props.users}/>
-            </div>
+            <RenderMessages />
             <MessageInput />
         </div>
     )
