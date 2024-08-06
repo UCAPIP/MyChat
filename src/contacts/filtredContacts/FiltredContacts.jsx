@@ -6,24 +6,18 @@ const FiltredContacts = (props) => {
 
     const users = useSelector((state) => state.users);
 
-    if(props.InptText === ''){
-        return(
-            <div className="contactsList">
-            {users.map((user) => (
-                <ContactItem user={user}/>
-            ))}
-            </div>
-        ) 
-    }else{
-        return(
-            <div className="contactsList">
-            {users.map((user) => { 
-                let name = user.name.toLowerCase();
-                return(name.includes(props.InptText.toLowerCase()) ? <ContactItem user={user}/> : null);
-            })}
-            </div>
-        )
-    }
+    const allContacts = users.map(user => <ContactItem user={user}/>);
+
+    const foundContacts = users.map((user) => { 
+        let name = user.name.toLowerCase();
+        return(name.includes(props.InptText.toLowerCase()) ? <ContactItem user={user}/> : null);
+    })
+
+    return(
+        <div className="contactsList">
+            {props.inptText === '' ? allContacts : foundContacts}
+        </div>
+    )
 }
 
 export default FiltredContacts;
