@@ -44,13 +44,19 @@ const MessageInput = () => {
             newMessage: {
                 sender: false,
                 text: text,
-                date: moment().format('MMMM Do YYYY, h:mm:ss a')
+                date: `${moment().format('D.M.YYYY h:mm a')}`
             }
         }))
 
         event.preventDefault();
         setText('');
         setHeight('14px')
+    }
+
+    const keySend = (event) => {
+        if(event.key === "Enter" && !event.shiftKey){
+            handleSend(event);
+        }
     }
 
     return(
@@ -62,12 +68,13 @@ const MessageInput = () => {
                 onChange={(e) => {handleChange(e); sizeChange(e);}}
                 placeholder='Введите сообщение'
                 style={{height: height, overflow: scrollText}}
+                onKeyDown={keySend}
                 />
             <input 
                 className="inputForm__btn"
                 type="submit" 
                 value="Отправить"
-                onClick={handleSend} 
+                onClick={handleSend}
                 />
         </form>
     )

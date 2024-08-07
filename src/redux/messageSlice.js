@@ -8,12 +8,12 @@ const initialState = [
         {
             sender: true,
             text: "bla bla bla",
-            date: moment().format('MMMM Do YYYY, h:mm:ss a')
+            date: moment().format('D.M.YYYY h:mm a')
         }, 
         {
             sender: false,
             text: "bla bla bla",
-            date: moment().format('MMMM Do YYYY, h:mm:ss a')
+            date: moment().format('D.M.YYYY h:mm a')
         }]     
     },
     {
@@ -22,12 +22,12 @@ const initialState = [
         {
           sender: true,
           text: "hello OLA OLA OAL",
-          date: moment().format('MMMM Do YYYY, h:mm:ss a')
+          date: moment().format('D.M.YYYY h:mm a')
         }, 
         {
           sender: true,
           text: "bla bla bla",
-          date: moment().format('MMMM Do YYYY, h:mm:ss a')
+          date: moment().format('D.M.YYYY h:mm a')
         }]
     },
     {
@@ -36,12 +36,12 @@ const initialState = [
         {
             sender: false,
             text: "hello OLA OLA OAL",
-            date: moment().format('MMMM Do YYYY, h:mm:ss a')
+            date: moment().format('D.M.YYYY h:mm a')
         }, 
         {
             sender: false,
             text: "bla bla bla",
-            date: moment().format('MMMM Do YYYY, h:mm:ss a')
+            date: moment().format('D.M.YYYY h:mm a')
         }]
     }
 ];
