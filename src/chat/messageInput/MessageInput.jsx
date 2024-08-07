@@ -42,7 +42,7 @@ const MessageInput = () => {
         dispatch(setNewMessage({
             chatId: chatToUpdate,
             newMessage: {
-                sender: "me",
+                sender: false,
                 text: text,
                 date: moment().format('MMMM Do YYYY, h:mm:ss a')
             }
@@ -54,24 +54,22 @@ const MessageInput = () => {
     }
 
     return(
-        <>
-            <form className="inputForm">
-                <textarea 
-                    className="inputForm__input"
-                    type="text" 
-                    value={text} 
-                    onChange={(e) => {handleChange(e); sizeChange(e);}}
-                    placeholder='Введите сообщение'
-                    style={{height: height, overflow: scrollText}}
-                    />
-                <input 
-                    className="inputForm__btn"
-                    type="submit" 
-                    value="Отправить"
-                    onClick={handleSend} 
-                    />
-            </form>
-        </>
+        <form className="inputForm">
+            <textarea 
+                className="inputForm__input"
+                type="text" 
+                value={text} 
+                onChange={(e) => {handleChange(e); sizeChange(e);}}
+                placeholder='Введите сообщение'
+                style={{height: height, overflow: scrollText}}
+                />
+            <input 
+                className="inputForm__btn"
+                type="submit" 
+                value="Отправить"
+                onClick={handleSend} 
+                />
+        </form>
     )
 }
 

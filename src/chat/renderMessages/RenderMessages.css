@@ -7,15 +7,8 @@
     scroll-snap-type: y;
     scrollbar-width: thin;
     scrollbar-color: rgb(195, 195, 195) rgb(160, 170, 160);
-}
 
-.messagesBody__chatName{
-    box-shadow: 0 1px rgb(195, 195, 195);
-    color: rgb(195, 195, 195);
-}
-
-.messagesBody__messages{  
-    padding: 15px;
+    
     display: flex;
     flex-direction: column;
     align-items: start;
@@ -23,10 +16,25 @@
     text-align: start;
 }
 
+.messagesBody__chatName{
+    margin: 15px;
+    box-shadow: 0 1px rgb(195, 195, 195);
+    color: rgb(195, 195, 195);
+}
+
+/* .messagesBody__messages{  
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: start;
+    text-align: start;
+} */
+
 .messagesBody__messageUser{
     background-color: rgb(160, 170, 160);
     border-radius: 5px;
-    margin: 5px 0;
+    margin: 5px 15px;
     padding: 0 15px;
 }
 
@@ -34,7 +42,7 @@
     align-self: end;
     background-color: rgb(160, 200, 160);
     border-radius: 5px;
-    margin: 5px 0;
+    margin: 5px 15px;
     padding: 0 15px;
 }
 

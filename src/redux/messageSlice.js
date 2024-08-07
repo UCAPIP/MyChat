@@ -6,12 +6,12 @@ const initialState = [
         chatId: 0,
         messagesText: [
         {
-            sender: "user",
+            sender: true,
             text: "bla bla bla",
             date: moment().format('MMMM Do YYYY, h:mm:ss a')
         }, 
         {
-            sender: "me",
+            sender: false,
             text: "bla bla bla",
             date: moment().format('MMMM Do YYYY, h:mm:ss a')
         }]     
@@ -20,12 +20,12 @@ const initialState = [
         chatId: 1,
         messagesText: [
         {
-          sender: "user",
+          sender: true,
           text: "hello OLA OLA OAL",
           date: moment().format('MMMM Do YYYY, h:mm:ss a')
         }, 
         {
-          sender: "user",
+          sender: true,
           text: "bla bla bla",
           date: moment().format('MMMM Do YYYY, h:mm:ss a')
         }]
@@ -34,12 +34,12 @@ const initialState = [
         chatId: 2,
         messagesText: [
         {
-            sender: "me",
+            sender: false,
             text: "hello OLA OLA OAL",
             date: moment().format('MMMM Do YYYY, h:mm:ss a')
         }, 
         {
-            sender: "me",
+            sender: false,
             text: "bla bla bla",
             date: moment().format('MMMM Do YYYY, h:mm:ss a')
         }]
