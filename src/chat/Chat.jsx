@@ -1,11 +1,11 @@
 import "./Chat.css"
-import RenderMessages from './renderMessages/RenderMessages';
 import MessageInput from './messageInput/MessageInput';
+import MessagesContainer from "./messagesContainer/MessagesContainer";
 
 const Chat = () => {
     return(
         <div className='chatBody'>
-            <RenderMessages />
+            <MessagesContainer />
             <MessageInput />
         </div>
     )

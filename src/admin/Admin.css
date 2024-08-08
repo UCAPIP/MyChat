@@ -42,3 +42,13 @@
     padding: 10px;
     align-self: center;
 }
+
+.admin__form-btn:hover{
+    background: rgb(195, 195, 195);
+}
+
+.btns{
+    display: flex;
+    align-self: center;
+    gap: 15px;
+}

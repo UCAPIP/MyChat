@@ -1,5 +1,5 @@
 .messagesBody{
-    background-image: url("../../images/CHAT_BACK.jpg");
+    background-image: url("../../../images/CHAT_BACK.jpg");
     border-radius: 5px;
     width: 100%;
     height: 90vh;
@@ -61,12 +61,3 @@
     margin-top: 0;
 }
 
-.custom-menu {
-    margin: 0;
-    padding: 0 15px;
-    position: absolute;
-    border-radius: 15px;
-    z-index: 1000;
-    background-color: rgb(80, 95, 80);
-    color: rgb(205, 225, 205);
-  }

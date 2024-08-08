@@ -40,7 +40,7 @@ input:focus{
 }
 
 .headerBtn{
-    transition: all 0.3s ease;
+    transition: all 0.2s ease;
     text-align: center;
     display: flex;
     width: 45px;

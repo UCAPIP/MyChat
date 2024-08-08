@@ -3,7 +3,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { setNewUser } from "../redux/userSlice";
 import { setNewChat } from "../redux/messageSlice";
 import "./Admin.css";
-
+import CreateAlert from "./createAlert/CreateAlert";
+import { Link } from "react-router-dom";
 
 
 const Admin = () => {
@@ -27,29 +28,34 @@ const Admin = () => {
     }
 
     
+    const [wasCreated, setWasCreated] = useState(false);
 
     const addUser = (event) => {
+        if(name && login && password){
+            const newId = users[users.length - 1].userId + 1;
 
-        const newId = users[users.length - 1].userId + 1;
-
-        dispatch(setNewUser({
-            chatId: newId,
-            userId: newId,
-            name: name,
-            login: login,
-            password: password
-        }))
-
-        dispatch(setNewChat({
-            chatId: newId,
-            messagesText: []      
-        }))
-        setName('');
-        setLogin('');
-        setPassword('');
-        event.preventDefault();
+            dispatch(setNewUser({
+                chatId: newId,
+                userId: newId,
+                name: name,
+                login: login,
+                password: password
+            }))
+    
+            dispatch(setNewChat({
+                chatId: newId,
+                messagesText: []      
+            }))
+    
+            setWasCreated(true);
+            setName('');
+            setLogin('');
+            setPassword('');
+            event.preventDefault();
+        }else{
+            alert("Не все поля заполнены!");
+        }
     }
-
 
     return(
         <div className="admin">
@@ -67,8 +73,13 @@ const Admin = () => {
                     <label>Пароль</label>
                     <input type="text" onChange={passwordChange} value={password}/>
                 </div>
-                <input className="admin__form-btn" type="button" value="Создать" onClick={addUser}/>
+                <div className="btns">
+                    <Link to="/"><input className="admin__form-btn" type="button" value="Назад" /></Link>
+                    <input className="admin__form-btn" type="button" value="Создать" onClick={addUser}/>
+                </div>
+                
             </form>
+            {wasCreated ? <CreateAlert users={users[users.length - 1]}/> : null}
         </div>
     )
 }

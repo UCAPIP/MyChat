@@ -9,10 +9,8 @@ import { setNewMessage } from "../../redux/messageSlice";
 const MessageInput = () => {
 
     const messages = useSelector((state) => state.messages);
-    
     const dispatch = useDispatch();
-
-    const [text, setText] = useState('')
+    const [text, setText] = useState('');
 
     const handleChange = (event) => {
         setText(event.target.value);
